@@ -49,10 +49,10 @@ int main(int argc, char **argv) {
 
 int **create_matrix(int row, int col) {
 
-	int **mat = (int **)malloc( row*sizeof(int *) );
+	int **mat = malloc( row*sizeof(int *) );
 
 	for(int i=0; i<row; i++) 
-		mat[i] = (int *)malloc( col*sizeof(int) );
+		mat[i] = malloc( col*sizeof(int) );
 
 	return (mat);
 }
