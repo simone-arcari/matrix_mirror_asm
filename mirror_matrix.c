@@ -48,11 +48,7 @@ int main(int argc, char **argv) {
 
 
 int **create_matrix(int row, int col) {
-/*
-	@param row: intero, numero righe
-	@param col: intero, numero colonne
-	@return pointer: puntatore a puntatore (matrice dinamica)
-*/
+
 	int **mat = (int **)malloc( row*sizeof(int *) );
 
 	for(int i=0; i<row; i++) 
@@ -62,6 +58,7 @@ int **create_matrix(int row, int col) {
 }
 
 void popolate_matrix(int row, int col, int **mat, int values[row][col]) {
+	
 	for(int i=0; i<row; i++) {
 		for(int j=0; j<col; j++) {
 			mat[i][j] = values[i][j];
