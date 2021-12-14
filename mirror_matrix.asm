@@ -84,7 +84,7 @@ main:
         lw      $a2, 0($t0)             # $a2 = COL
 
 
-        jal     mirror_matrix           # call mirror(&A[0], ROW=3, COL=4)
+        jal     mirror_matrix           # call mirror(&A[0], ROW=3, COL=5)
 
 
         lw      $ra, 0($sp)             # pop $ra from 0($sp)
