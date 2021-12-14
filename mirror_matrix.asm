@@ -39,16 +39,16 @@ loop2:
         add	$t2, $a0, $t2		# $t2 = &MAT[i][j]
         lw      $s2, 0($t2)             # temp = MAT[i][j]       ($s2 = temp)
 
-        # MAT[i][j] = MAT[COL-j-1]
+        # MAT[i][j] = MAT[i][COL-j-1]
         sub     $t3, $a2, $s1		# $t3 = COL-j
         addi	$t3, $t3, -1		# $t3 = COL-j-1
         sll     $t3, $t3, 2             # $t3 = (COL-j-1)*4
         add	$t3, $a0, $t3		# $t3 = &MAT[i][COL-j-1]
         lw      $s3, 0($t3)             # $s3 = MAT[i][COL-j-1]
-        sw      $s3, 0($t2)             # MAT[i][j] = MAT[COL-j-1]
+        sw      $s3, 0($t2)             # MAT[i][j] = MAT[i][COL-j-1]
 
-        # MAT[COL-j-1] = temp
-        sw      $s2, 0($t3)             # MAT[COL-j-1] = temp   ($s2 = temp)
+        # MAT[i][COL-j-1] = temp
+        sw      $s2, 0($t3)             # MAT[i][COL-j-1] = temp   ($s2 = temp)
         
 
         addi    $s1, $s1, 1             # j++
