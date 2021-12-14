@@ -83,9 +83,9 @@ void mirror_matrix(int **mat, int row, int col) {
 	for(int i=0; i<row; i++) 
 		for(int j=0; j<col/2; j++) {
 		
-		int temp = mat[i][j];
-		mat[i][j] = mat[i][col-j-1];
-		mat[i][col-j-1] = temp;
+			int temp = mat[i][j];
+			mat[i][j] = mat[i][col-j-1];
+			mat[i][col-j-1] = temp;
 	}
 }
 
